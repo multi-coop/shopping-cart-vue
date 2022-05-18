@@ -1,7 +1,9 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+//Views
 import HomeView from '@/views/HomeView.vue'
 import CartView from '@/views/CartView.vue'
+//Components
 import ArticleItem from '@/components/Article.vue'
 
 Vue.use(VueRouter)
