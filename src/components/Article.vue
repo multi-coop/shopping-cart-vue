@@ -1,10 +1,14 @@
 <template>
     <div class="wrapper">
-        <h1>Title : </h1>
-        <h2>Category : </h2>
+        <h1>Title : {{ articleInfo.title }} </h1>
+        <h2>Category : {{ articleInfo.category }} </h2>
+        <img :src="articleInfo.image" alt="" srcset="">
         <h2>Description : </h2>
-        <p></p>
-        <h2>Price : </h2>
+        <p> {{ articleInfo.description }}</p>
+        <h2> {{ articleInfo.price }}€ </h2>
+
+        <button>Voir</button>
+        <button>Ajouter</button>
 
     </div>
 </template>
@@ -12,6 +16,12 @@
 <script>
 export default{
     name: 'ArticleItem',
+    props : {
+        articleInfo : {
+            type : Object,
+            default : Object
+        }
+    },
     data(){
         return{
 
@@ -28,12 +38,21 @@ export default{
 <style scoped>
 .wrapper{
     border: 1px solid black;
-    width: 80vw;
+    width: 40vw;
     margin: auto;
     box-sizing: border-box;
+    padding: 2%;
+    flex-wrap: wrap
 }
 
 img{
-    max-width: 100%;
+    max-width: 40%;
+}
+
+button{
+    font-weight: bold;
+    padding: 1%;
+    width: 5vw;
+    margin: 2%;
 }
 </style>

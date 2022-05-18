@@ -1,17 +1,31 @@
 <template>
   <div class="home">
-
+    <h1>Your shopping Website</h1>
+    <div v-for='(article,index) in $store.state.allArticles' :key='index'>
+      <ArticleItem :articleInfo="article"/>
+    </div>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-
+import ArticleItem from '@/components/Article.vue'
+// import {mapGetters, mapActions} from 'vuex'
 
 export default {
     name: 'HomeView',
-    components: {
+    data(){
+        return{
 
+        }
+    },
+    components: {
+        ArticleItem
     },
 }
 </script>
+
+<style scoped>
+/* .home{
+      display: flex;
+} */
+</style>

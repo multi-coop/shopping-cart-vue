@@ -1,9 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-
+/* eslint-disable */ 
 Vue.use(Vuex)
-
-console.log('cucutua')
 
 const state = {
     allArticles : [
@@ -250,3 +248,6 @@ const state = {
     ]
 }
 
+export default new Vuex.Store({
+    state,
+})
