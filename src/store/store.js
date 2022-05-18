@@ -4,6 +4,9 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 
 const state = {
+    
+    addedArticles : 0,
+
     allArticles : [
         {
             id: 1,
