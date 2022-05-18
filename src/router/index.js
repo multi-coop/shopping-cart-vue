@@ -4,7 +4,7 @@ import VueRouter from 'vue-router'
 import HomeView from '@/views/HomeView.vue'
 import CartView from '@/views/CartView.vue'
 //Components
-import ArticleItem from '@/components/Article.vue'
+import ArticleView from '@/views/ArticleView.vue'
 
 Vue.use(VueRouter)
 
@@ -22,7 +22,7 @@ const routes = [
     {
         path : '/article/:id',
         name : 'article',
-        component : ArticleItem
+        component : ArticleView
     }
 ]
 
@@ -30,7 +30,6 @@ const router = new VueRouter({
     mode: 'history',
     base: process.env.BASE_URL,
     routes,
-    
 })
 
 export default router

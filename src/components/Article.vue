@@ -1,14 +1,11 @@
 <template>
     <div class="wrapper">
-        <h1>Title : {{ articleInfo.title }} </h1>
-        <h2>Category : {{ articleInfo.category }} </h2>
+        <h1> {{ articleInfo.title }} </h1>
         <img :src="articleInfo.image" alt="" srcset="">
-        <h2>Description : </h2>
-        <p> {{ articleInfo.description }}</p>
         <h2> {{ articleInfo.price }}€ </h2>
 
-        <button>Voir</button>
         <button>Ajouter</button>
+        <button>Voir</button>
 
     </div>
 </template>
@@ -42,7 +39,8 @@ export default{
     margin: auto;
     box-sizing: border-box;
     padding: 2%;
-    flex-wrap: wrap
+    flex-wrap: wrap;
+    margin-bottom: 2%;
 }
 
 img{

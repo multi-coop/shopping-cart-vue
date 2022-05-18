@@ -2,7 +2,7 @@
   <div class="home">
     <h1>Your shopping Website</h1>
     <div v-for='(article,index) in $store.state.allArticles' :key='index'>
-      <ArticleItem :articleInfo="article"/>
+     <router-link :to="`/article/${article.id}`"><ArticleItem :articleInfo="article"/></router-link>
     </div>
   </div>
 </template>
