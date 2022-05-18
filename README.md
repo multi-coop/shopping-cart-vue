@@ -1,7 +1,12 @@
 # shopping-cart
 
-## Project setup
-```
+## Install NVM 
+If you don't have NVM installed yet, check the instructions here : https://github.com/nvm-sh/nvm
+
+### Project setup
+```bash
+nvm install v16.13.0
+nvm use
 npm install
 ```
 
@@ -22,3 +27,4 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
