@@ -2,7 +2,7 @@
   <div id="app">
     <nav>
       <router-link to="/">Inventory</router-link> |
-      <router-link to="/cart">Cart</router-link>
+      <router-link to="/cart">Cart : {{ $store.state.addedArticles }} article(s)</router-link>
     </nav>
     <router-view />
   </div>

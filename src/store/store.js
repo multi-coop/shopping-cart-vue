@@ -251,6 +251,22 @@ const state = {
     ]
 }
 
+const actions = {
+    incrementCount : ({ commit }) => commit('incrementCount'),
+    decrementCount : ({ commit }) => commit('decrementCount')
+}
+
+const mutations = {
+    incrementCount(state){
+        state.addedArticles++
+    },
+    decrementCount(state){
+        state.addedArticles--
+    }
+}
+
 export default new Vuex.Store({
     state,
+    mutations,
+    actions,
 })

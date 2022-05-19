@@ -4,13 +4,14 @@
         <img :src="articleInfo.image" alt="" srcset="">
         <h2> {{ articleInfo.price }}€ </h2>
 
-        <button>Ajouter</button>
+        <button @click="incrementCount">Ajouter</button>
         <button>Voir</button>
 
     </div>
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 export default{
     name: 'ArticleItem',
     props : {
@@ -24,6 +25,10 @@ export default{
 
         }
     },
+    methods : mapActions([
+        'incrementCount',
+        'decrementCount'
+    ]),
     // async mounted(){
     //     const data = await fetch('https://fakestoreapi.com/products')
     //     const response = await data.json()
