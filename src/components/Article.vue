@@ -6,7 +6,11 @@
         </router-link>
         <h2> {{ articleInfo.price }}€ </h2>
 
-        <button @click="incrementCount" :class="articleInfo.id">Ajouter</button>
+        <button 
+              @click="addArticleToCart(articleInfo.id), incrementCount()" 
+              :class="articleInfo.id">
+              Ajouter
+        </button>
         <router-link :to="`/article/${articleInfo.id}`">
            <button>Voir</button>
         </router-link>
@@ -31,7 +35,8 @@ export default{
     },
     methods : mapActions([
         'incrementCount',
-        'decrementCount'
+        'decrementCount',
+        'addArticleToCart'
     ]),
 
     // async mounted(){

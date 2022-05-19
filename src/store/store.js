@@ -256,8 +256,13 @@ const state = {
 const actions = {
     incrementCount : ({ commit }) => commit('incrementCount'),
     decrementCount : ({ commit }) => commit('decrementCount'),
+    addArticleToCart : ({ commit }, articleId) => {
+        console.log('articleId', articleId)
+        commit('addArticleToCart', articleId)
+    } 
 }
 
+//Correct syntax : cf Gitribute
 const getters = {
     singularOrPlurial : state => state.addedArticlesCount <= 1 ? 'article' : 'articles'
 }
@@ -269,6 +274,12 @@ const mutations = {
     decrementCount(state){
         state.addedArticlesCount--
     },
+    addArticleToCart(state, articleId){
+        articleId = parseInt(articleId)
+        const article = state.allArticles.find(elem => elem.id === articleId)
+        state.cart.push(article)
+        console.log('state cart updated !',state.cart)
+    }
     
 }
 
