@@ -15,10 +15,8 @@
             <button>Go shopping</button>
         </router-link>
 
-        <router-link
-                   to="/payment">
-           <button>Proceed to payment</button>
-        </router-link>
+        <button>Empty the cart</button>
+
 
     </div>
 </template>

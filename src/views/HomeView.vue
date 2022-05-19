@@ -1,8 +1,7 @@
 <template>
   <div class="home">
-    <h1>Your shopping Website</h1>
     <div v-for='(article,index) in $store.state.allArticles' :key='index'>
-     <router-link :to="`/article/${article.id}`"><ArticleItem :articleInfo="article"/></router-link>
+    <ArticleItem :articleInfo="article"/>
     </div>
   </div>
 </template>
@@ -25,7 +24,11 @@ export default {
 </script>
 
 <style scoped>
-/* .home{
+.home{
       display: flex;
-} */
+      flex-wrap: wrap;
+}
+span{
+  display: block;
+}
 </style>

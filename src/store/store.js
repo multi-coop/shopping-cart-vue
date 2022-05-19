@@ -5,7 +5,9 @@ Vue.use(Vuex)
 
 const state = {
     
-    addedArticles : 0,
+    addedArticlesCount : 0,
+
+    cart : [],
 
     allArticles : [
         {
@@ -253,16 +255,18 @@ const state = {
 
 const actions = {
     incrementCount : ({ commit }) => commit('incrementCount'),
-    decrementCount : ({ commit }) => commit('decrementCount')
+    decrementCount : ({ commit }) => commit(' DECREMENT_COUNT'),
+    
 }
 
 const mutations = {
     incrementCount(state){
-        state.addedArticles++
+        state.addedArticlesCount++
     },
-    decrementCount(state){
-        state.addedArticles--
-    }
+    DECREMENT_COUNT(state){
+        state.addedArticlesCount--
+    },
+    
 }
 
 export default new Vuex.Store({
