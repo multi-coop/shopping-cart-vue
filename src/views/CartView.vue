@@ -3,7 +3,7 @@
         <h1>Your cart</h1>
         <h2 
            v-if="$store.state.addedArticlesCount > 0">
-           You have {{$store.state.addedArticlesCount}} {{singularOrPlurial}}.
+           You have {{$store.state.addedArticlesCount}} {{sg}}.
         </h2>
         <h2 
            v-if="$store.state.addedArticles === 0">
@@ -34,9 +34,13 @@ export default{
         ...mapActions([
             'incrementCount',
             'decrementCount',
-        ])},
+            'addArticleToCart'
+        ])
+    },
     computed : {
-        ...mapGetters(['singularOrPlurial'])
+        ...mapGetters({
+            sg : 'singularOrPlurial'
+        })
     }
 }
 </script>
