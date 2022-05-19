@@ -30,11 +30,14 @@ export default{
 
         }
     },
-    methods : mapActions([
-        'incrementCount',
-        'decrementCount',
-    ]),
-    computed : mapGetters(['singularOrPlurial'])
+    methods : {
+        ...mapActions([
+            'incrementCount',
+            'decrementCount',
+        ])},
+    computed : {
+        ...mapGetters(['singularOrPlurial'])
+    }
 }
 </script>
 
