@@ -27,8 +27,13 @@ export default {
 .home{
       display: flex;
       flex-wrap: wrap;
+      background-color: #f7f6f2;
 }
 span{
   display: block;
+}
+
+.gap{
+  width: 200px;
 }
 </style>
