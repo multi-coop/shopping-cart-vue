@@ -1,6 +1,9 @@
 <template>
     <div class="wrapper">
-        <h2 class="title"> {{ articleInfo.title }} </h2>
+        <router-link :to="`/article/${articleInfo.id}`">
+            <h2 class="title"> {{ articleInfo.title }} </h2>
+        </router-link>
+        
         <router-link :to="`/article/${articleInfo.id}`">
            <img :src="articleInfo.image" alt="" srcset="">
         </router-link>
