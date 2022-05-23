@@ -1,6 +1,6 @@
 <template>
     <div class="wrapper">
-        <h2> {{ articleInfo.title }} </h2>
+        <h2 class="title"> {{ articleInfo.title }} </h2>
         <router-link :to="`/article/${articleInfo.id}`">
            <img :src="articleInfo.image" alt="" srcset="">
         </router-link>
@@ -9,7 +9,7 @@
         <button 
               @click="addArticleToCart(articleInfo.id), incrementCount()" 
               :class="articleInfo.id"
-              class="button is-primary is-medium">
+              class="button is-medium btn-buy">
               Add to cart
         </button>
         <router-link :to="`/article/${articleInfo.id}`">
@@ -60,16 +60,36 @@ export default{
     margin-bottom: 2%;
     height:60vh;
     overflow-y: scroll;
-    border: 1px solid grey;
+    border: 1px solid #D0C9C0;
     margin: 3% 15%;
+}
+.title{
+    font-size: 1.2rem;
+}
+
+.title:hover{
+    color: #6D8B74;
+}
+
+h2{
+    font-size: 1.4rem;
+    font-weight:bold;
+    margin: 4%;
 }
 
 img{
-    max-width: 30%;
+    max-width: 10vw;
+    width:10vw;
+    max-height: 23vh;
+    height: 23vh;
 }
 
 button{
     font-weight: bold;
     margin: 2%;
+}
+.btn-buy{
+    background-color: #6D8B74;
+    color: white; 
 }
 </style>

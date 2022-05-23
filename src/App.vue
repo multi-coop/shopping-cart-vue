@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-      <h1>Your shopping Website</h1>
-
-    <div class="tabs is-centered is-medium">
+    
+    <div class="tabs is-medium is-right">
+      <h1>Easy Shopping</h1>
       <ul>
         <li 
            :class="tab1 === true ? 'is-active' : '' "
@@ -56,10 +56,12 @@ export default{
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+   background-color: #f7f6f2;
 }
 
-nav {
-  padding: 50px;
+.tabs{
+  background-color:#d8d4cc;
+  padding: 2%;
 }
 
 nav a {
