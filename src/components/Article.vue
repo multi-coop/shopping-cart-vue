@@ -8,11 +8,12 @@
 
         <button 
               @click="addArticleToCart(articleInfo.id), incrementCount()" 
-              :class="articleInfo.id">
-              Ajouter
+              :class="articleInfo.id"
+              class="button is-primary is-medium">
+              Add to cart
         </button>
         <router-link :to="`/article/${articleInfo.id}`">
-           <button>Voir</button>
+           <button class="button is-outlined is-medium">See details</button>
         </router-link>
 
     </div>
@@ -20,6 +21,7 @@
 
 <script>
 import { mapActions } from 'vuex'
+import 'bulma'
 export default{
     name: 'ArticleItem',
     props : {
@@ -28,6 +30,7 @@ export default{
             default : Object
         }
     },
+
     data(){
         return{
 
@@ -67,8 +70,6 @@ img{
 
 button{
     font-weight: bold;
-    padding: 1%;
-    width: 5vw;
     margin: 2%;
 }
 </style>
