@@ -278,7 +278,6 @@ const mutations = {
         articleId = parseInt(articleId)
         const article = state.allArticles.find(elem => elem.id === articleId)
         state.cart.push(article)
-        console.log('state cart updated !',state.cart)
     }
     
 }
