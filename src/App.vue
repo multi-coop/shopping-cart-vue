@@ -33,7 +33,7 @@
 }
 
 nav {
-  padding: 500px;
+  padding: 50px;
 }
 
 nav a {
