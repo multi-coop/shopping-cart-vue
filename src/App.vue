@@ -4,13 +4,17 @@
 
     <div class="tabs is-centered is-medium">
       <ul>
-        <li class="is-active">
+        <li 
+           :class="tab1 === true ? 'is-active' : '' "
+           @click="activateTab1">
            <router-link 
                     to="/">
                     Inventory
         </router-link> 
         </li>
-        <li>
+        <li 
+           :class="tab2 ? 'is-active' : '' "
+           @click="activateTab2">
            <router-link 
                    to="/cart">
                    Cart : {{ $store.state.addedArticlesCount }} article(s)
@@ -22,6 +26,28 @@
     <router-view />
   </div>
 </template>
+
+<script>
+export default{
+    name: 'App',
+    data(){
+        return{
+            tab1 : true,
+            tab2: false
+        }
+    },
+    methods : {
+        activateTab1 : function(){
+            this.tab1 = true
+            this.tab2 = false
+        },
+        activateTab2 : function(){
+            this.tab2 = true
+            this.tab1 = false
+        },
+    }
+}
+</script>
 
 <style>
 #app {
