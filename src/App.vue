@@ -1,16 +1,24 @@
 <template>
   <div id="app">
-        <h1>Your shopping Website</h1>
-    <nav>
-      <router-link 
-                  to="/" class="onglet">
-                  Inventory
-      </router-link> 
-      <router-link 
-                 to="/cart" class="onglet">
-                 Cart : {{ $store.state.addedArticlesCount }} article(s)
-      </router-link>
-    </nav>
+      <h1>Your shopping Website</h1>
+
+    <div class="tabs is-centered is-medium">
+      <ul>
+        <li class="is-active">
+           <router-link 
+                    to="/">
+                    Inventory
+        </router-link> 
+        </li>
+        <li>
+           <router-link 
+                   to="/cart">
+                   Cart : {{ $store.state.addedArticlesCount }} article(s)
+        </router-link>
+        </li>
+      </ul>
+
+    </div>
     <router-view />
   </div>
 </template>
@@ -25,7 +33,7 @@
 }
 
 nav {
-  padding: 30px;
+  padding: 500px;
 }
 
 nav a {
@@ -37,9 +45,4 @@ nav a.router-link-exact-active {
   color: #42b983;
 }
 
-.onglet{
-  border: 1px solid black;
-  padding: 1%;
-  margin: 1%;
-}
 </style>
