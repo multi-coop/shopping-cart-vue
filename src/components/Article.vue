@@ -54,14 +54,15 @@ export default{
 .wrapper{
     border: 1px solid black;
     width: 30vw;
-    margin: auto;
     box-sizing: border-box;
     padding: 2%;
-    margin-bottom: 2%;
     height:60vh;
     overflow-y: scroll;
     border: 1px solid #D0C9C0;
-    margin: 3% 15%;
+    margin: 3%;
+}
+.wrapper:hover{
+    border-color: #6D8B74;;
 }
 .title{
     font-size: 1.2rem;

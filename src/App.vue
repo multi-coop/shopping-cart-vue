@@ -49,7 +49,7 @@ export default{
 }
 </script>
 
-<style>
+<style scoped>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -57,6 +57,12 @@ export default{
   text-align: center;
   color: #2c3e50;
    background-color: #f7f6f2;
+}
+
+h1{
+  font-weight: bold;
+  font-size: 2rem;
+  color: #5c7061;
 }
 
 .tabs{
