@@ -8,6 +8,7 @@ const state = {
     addedArticlesCount : 0,
 
     cart : [],
+    isDisplayed : false,
 
     allArticles : [
         {
@@ -256,10 +257,8 @@ const state = {
 const actions = {
     incrementCount : ({ commit }) => commit('incrementCount'),
     decrementCount : ({ commit }) => commit('decrementCount'),
-    addArticleToCart : ({ commit }, articleId) => {
-        console.log('articleId', articleId)
-        commit('addArticleToCart', articleId)
-    } 
+    addArticleToCart : ({ commit }, articleId) => commit('addArticleToCart', articleId),
+    displayNotification : ({ commit }) => commit('displayNotification')
 }
 
 //Correct syntax : cf Gitribute
@@ -278,6 +277,12 @@ const mutations = {
         articleId = parseInt(articleId)
         const article = state.allArticles.find(elem => elem.id === articleId)
         state.cart.push(article)
+    },
+    displayNotification(state){
+        state.isDisplayed = true
+        setTimeout(() => {
+            state.isDisplayed = false
+        }, 1500)
     }
     
 }

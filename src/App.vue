@@ -3,10 +3,12 @@
     
     <div class="tabs is-medium is-right">
       <h1>Easy Shopping</h1>
+      <!-- <ul class="is-flex-direction-column is-flex-direction-row-desktop">\ -->
       <ul>
         <li 
            :class="tab1 === true ? 'is-active' : '' "
-           @click="activateTab1">
+           @click="activateTab1"
+           >
            <router-link 
                     to="/">
                     Inventory
@@ -14,7 +16,8 @@
         </li>
         <li 
            :class="tab2 ? 'is-active' : '' "
-           @click="activateTab2">
+           @click="activateTab2"
+            >
            <router-link 
                    to="/cart">
                    Cart : {{ $store.state.addedArticlesCount }} article(s)
