@@ -1,25 +1,29 @@
 <template>
   <div class="home">
+        <div 
+        :class=" $store.state.isDisplayed ? 'notification is-primary' : 'notification is-primary hidden' ">Ajouté au panier !</div>
     <div v-for='(article,index) in $store.state.allArticles' :key='index' class="columns is-desktop">
-    <ArticleItem :articleInfo="article"/>
+    <div class="column is-half-tablet is-full">
+      <ArticleItem :articleInfo="article" class="column is-full"/>
+    </div>
     </div>
   </div>
 </template>
 
 <script>
 import ArticleItem from '@/components/Article.vue'
-// import {mapGetters, mapActions} from 'vuex'
 
 export default {
     name: 'HomeView',
     data(){
         return{
-
+            
         }
     },
     components: {
         ArticleItem,
     },
+
 }
 </script>
 
@@ -33,6 +37,17 @@ export default {
 }
 .columns{
   margin: auto;
+}
+.notification{
+  position:fixed;
+  z-index: 100;
+  top: 5%;
+  left: 42%;
+  font-weight: bold;
+  text-align: center;
+}
+.hidden{
+  display: none;
 }
 
 </style>
