@@ -257,8 +257,10 @@ const state = {
 const actions = {
     incrementCount : ({ commit }) => commit('incrementCount'),
     decrementCount : ({ commit }) => commit('decrementCount'),
-    addArticleToCart : ({ commit }, articleId) => commit('addArticleToCart', articleId),
-    displayNotification : ({ commit }) => commit('displayNotification')
+    addArticleToCart : ({ commit }, articleId) => {
+        console.log('articleId', articleId)
+        commit('addArticleToCart', articleId)
+    } 
 }
 
 //Correct syntax : cf Gitribute
