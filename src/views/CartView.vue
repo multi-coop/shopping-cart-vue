@@ -1,22 +1,19 @@
 <template>
-    <div class="wrapper">
-        <div class="infos">
-            <h1>Your cart</h1>
+    <div>
+        <h1>Your cart</h1>
+
         <h2 
            v-if="$store.state.addedArticlesCount > 0">
            You have {{$store.state.addedArticlesCount}} {{sg}}.
         </h2>
-
         <h2 
            v-if="$store.state.addedArticlesCount === 0">
            You don't have any articles yet.
+        </h2>
 
         <button 
-               v-if="$store.state.addedArticlesCount > 0">Empty the Cart
-        </button>
-        </h2>
-        </div>
-
+                @click="decrementCount(), emptyTheCart() "
+                v-if="$store.state.addedArticlesCount > 0">Empty the cart</button>
         <router-link
                    to="/">
             <button>Go shopping</button>
@@ -30,6 +27,7 @@
             </li>
         </ul>
 
+        
     </div>
 </template>
 
@@ -46,7 +44,8 @@ export default{
         ...mapActions([
             'incrementCount',
             'decrementCount',
-            'addArticleToCart'
+            'addArticleToCart',
+            'emptyTheCart'
         ])
     },
     computed: {
@@ -59,29 +58,4 @@ export default{
 </script>
 
 <style scoped>
-    .wrapper{
-      display: flex;
-      flex-direction: column;
-      flex-wrap: wrap;
-      border: 1px solid black;
-      height: 70vh;
-      width: 70vw;
-      margin: auto;
-      overflow: scroll;
-    }
-
-    h1{
-        text-align: center;
-    }
-
-    li{
-        list-style: none;
-    }
-    h2{
-        margin: auto;
-    }
-    button{
-        padding: 1%;
-        margin-top: 5%;
-    }
 </style>
