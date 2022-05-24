@@ -1,31 +1,73 @@
 <template>
   <div id="app">
-        <h1>Your shopping Website</h1>
-    <nav>
-      <router-link 
-                  to="/" class="onglet">
-                  Inventory
-      </router-link> 
-      <router-link 
-                 to="/cart" class="onglet">
-                 Cart : {{ $store.state.addedArticlesCount }} article(s)
-      </router-link>
-    </nav>
+    
+    <div class="tabs is-medium is-right">
+      <h1>Easy Shopping</h1>
+      <ul>
+        <li 
+           :class="tab1 === true ? 'is-active' : '' "
+           @click="activateTab1">
+           <router-link 
+                    to="/">
+                    Inventory
+        </router-link> 
+        </li>
+        <li 
+           :class="tab2 ? 'is-active' : '' "
+           @click="activateTab2">
+           <router-link 
+                   to="/cart">
+                   Cart : {{ $store.state.addedArticlesCount }} article(s)
+        </router-link>
+        </li>
+      </ul>
+
+    </div>
     <router-view />
   </div>
 </template>
 
-<style>
+<script>
+export default{
+    name: 'App',
+    data(){
+        return{
+            tab1 : true,
+            tab2: false
+        }
+    },
+    methods : {
+        activateTab1 : function(){
+            this.tab1 = true
+            this.tab2 = false
+        },
+        activateTab2 : function(){
+            this.tab2 = true
+            this.tab1 = false
+        },
+    }
+}
+</script>
+
+<style scoped>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+   background-color: #f7f6f2;
 }
 
-nav {
-  padding: 30px;
+h1{
+  font-weight: bold;
+  font-size: 2rem;
+  color: #5c7061;
+}
+
+.tabs{
+  background-color:#d8d4cc;
+  padding: 2%;
 }
 
 nav a {
@@ -37,9 +79,4 @@ nav a.router-link-exact-active {
   color: #42b983;
 }
 
-.onglet{
-  border: 1px solid black;
-  padding: 1%;
-  margin: 1%;
-}
 </style>

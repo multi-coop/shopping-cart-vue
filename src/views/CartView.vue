@@ -1,47 +1,57 @@
 <template>
     <div>
         <h1>Your cart</h1>
+
         <h2 
            v-if="$store.state.addedArticlesCount > 0">
            You have {{$store.state.addedArticlesCount}} {{sg}}.
         </h2>
         <h2 
-           v-if="$store.state.addedArticles === 0">
+           v-if="$store.state.addedArticlesCount === 0">
            You don't have any articles yet.
         </h2>
 
+        <button 
+                @click="decrementCount"
+                v-if="$store.state.addedArticlesCount > 0">Empty the cart</button>
         <router-link
                    to="/">
             <button>Go shopping</button>
         </router-link>
 
-        <button @click="decrementCount">Empty the cart</button>
-
+        <ul 
+           v-for="(article,index) in $store.state.cart" 
+           :key="index">
+            <li> 
+                <ArticleItem :articleInfo="article"/> 
+            </li>
+        </ul>
 
     </div>
 </template>
 
 <script>
+
 import { mapActions, mapGetters } from 'vuex'
+import ArticleItem from '@/components/Article.vue'
 export default{
     name: 'CartView',
-    data(){
-        return{
-
-        }
+    data() {
+        return {}
     },
-    methods : {
+    methods: {
         ...mapActions([
             'incrementCount',
             'decrementCount',
             'addArticleToCart'
         ])
     },
-    computed : {
+    computed: {
         ...mapGetters({
-            sg : 'singularOrPlurial'
+            sg: 'singularOrPlurial',
         })
-    }
+    },
+    components: { ArticleItem }
 }
 </script>
 

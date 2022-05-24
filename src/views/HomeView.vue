@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <div v-for='(article,index) in $store.state.allArticles' :key='index'>
+    <div v-for='(article,index) in $store.state.allArticles' :key='index' class="columns is-desktop">
     <ArticleItem :articleInfo="article"/>
     </div>
   </div>
@@ -27,8 +27,12 @@ export default {
 .home{
       display: flex;
       flex-wrap: wrap;
+      background-color: #f7f6f2;
+      width: 97vw;
+      margin: auto;
 }
-span{
-  display: block;
+.columns{
+  margin: auto;
 }
+
 </style>
