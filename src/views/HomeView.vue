@@ -1,6 +1,11 @@
 <template>
   <div class="home">
-    <div v-for='(article,index) in $store.state.allArticles' :key='index' class="columns is-desktop">
+
+    <!-- Notifications -->
+        <div 
+        :class=" $store.state.isDisplayed ? 'notification is-success' : 'notification is-primary hidden' ">Ajouté au panier !</div>
+    <!--- Content --->
+    <div v-for='(article,index) in $store.state.allArticles' :key='index' class="columns ">
     <div class="column is-half-tablet is-full">
       <ArticleItem :articleInfo="article" class="column is-full"/>
     </div>
