@@ -1,7 +1,5 @@
 <template>
   <div class="home">
-        <div 
-        :class=" $store.state.isDisplayed ? 'notification is-primary' : 'notification is-primary hidden' ">Ajouté au panier !</div>
     <div v-for='(article,index) in $store.state.allArticles' :key='index' class="columns is-desktop">
     <div class="column is-half-tablet is-full">
       <ArticleItem :articleInfo="article" class="column is-full"/>
@@ -12,7 +10,6 @@
 
 <script>
 import ArticleItem from '@/components/Article.vue'
-import { mapActions } from 'vuex'
 
 export default {
     name: 'HomeView',
@@ -24,11 +21,7 @@ export default {
     components: {
         ArticleItem
     },
-    methods : {
-        ...mapActions([
-            'displayNotification'
-        ])
-    }
+
 }
 </script>
 
