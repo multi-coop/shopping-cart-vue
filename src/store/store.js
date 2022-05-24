@@ -9,6 +9,8 @@ const state = {
 
     cart : [],
 
+    isDisplayed : false,
+
     allArticles : [
         {
             id: 1,
@@ -276,6 +278,12 @@ const mutations = {
         articleId = parseInt(articleId)
         const article = state.allArticles.find(elem => elem.id === articleId)
         state.cart.push(article)
+    },
+    displayNotification(state){
+        state.isDisplayed = true
+        setTimeout(() => {
+            state.isDisplayed = false
+        }, 1500)
     }
     
 }

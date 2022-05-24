@@ -7,7 +7,7 @@
         <h2> {{ articleInfo.price }}€ </h2>
 
         <button 
-              @click="addArticleToCart(articleInfo.id), incrementCount()" 
+              @click="addArticleToCart(articleInfo.id), incrementCount(), displayNotification()" 
               :class="articleInfo.id"
               class="button is-medium btn-buy">
               Add to cart
@@ -36,11 +36,14 @@ export default{
 
         }
     },
-    methods : mapActions([
-        'incrementCount',
-        'decrementCount',
-        'addArticleToCart'
-    ]),
+    methods :{
+        ...mapActions([
+            'incrementCount',
+            'decrementCount',
+            'addArticleToCart',
+            'displayNotification'
+        ]),
+    }
 
     // async mounted(){
     //     const data = await fetch('https://fakestoreapi.com/products')

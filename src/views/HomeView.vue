@@ -12,7 +12,6 @@
 
 <script>
 import ArticleItem from '@/components/Article.vue'
-import { mapActions } from 'vuex'
 
 export default {
     name: 'HomeView',
@@ -24,11 +23,7 @@ export default {
     components: {
         ArticleItem
     },
-    methods : {
-        ...mapActions([
-            'displayNotification'
-        ])
-    }
+
 }
 </script>
 
