@@ -25,6 +25,7 @@
             </router-link>
         </div>
 
+        <h2>TOTAL : {{total}} </h2>
         <ul 
            v-for="(article,index) in $store.state.cart" 
            :key="index">
@@ -58,6 +59,7 @@ export default{
     computed: {
         ...mapGetters({
             sg: 'singularOrPlurial',
+            total : 'totalPrice'
         })
     },
     components: { CartArticle }
