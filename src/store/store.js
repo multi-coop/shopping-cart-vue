@@ -258,7 +258,8 @@ const actions = {
     incrementCount : ({ commit }) => commit('incrementCount'),
     decrementCount : ({ commit }) => commit('decrementCount'),
     addArticleToCart : ({ commit }, articleId) => commit('addArticleToCart', articleId),
-    displayNotification : ({ commit }) => commit('displayNotification')
+    displayNotification : ({ commit }) => commit('displayNotification'),
+    emptyTheCart : ({ commit }) => commit('emptyTheCart')
 }
 
 //Correct syntax : cf Gitribute
@@ -283,8 +284,11 @@ const mutations = {
         setTimeout(() => {
             state.isDisplayed = false
         }, 1500)
+    },
+    emptyTheCart(state){
+        state.cart = []
+        state.addedArticlesCount = 0
     }
-    
 }
 
 export default new Vuex.Store({

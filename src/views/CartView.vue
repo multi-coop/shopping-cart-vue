@@ -12,7 +12,7 @@
         </h2>
 
         <button 
-                @click="decrementCount"
+                @click="decrementCount(), emptyTheCart() "
                 v-if="$store.state.addedArticlesCount > 0">Empty the cart</button>
         <router-link
                    to="/">
@@ -27,6 +27,7 @@
             </li>
         </ul>
 
+        
     </div>
 </template>
 
@@ -43,7 +44,8 @@ export default{
         ...mapActions([
             'incrementCount',
             'decrementCount',
-            'addArticleToCart'
+            'addArticleToCart',
+            'emptyTheCart'
         ])
     },
     computed: {

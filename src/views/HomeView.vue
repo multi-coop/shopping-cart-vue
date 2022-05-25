@@ -3,11 +3,11 @@
 
     <!-- Notifications -->
         <div 
-        :class=" $store.state.isDisplayed ? 'notification is-success' : 'notification is-primary hidden' ">Ajouté au panier !</div>
+        :class=" $store.state.isDisplayed ? 'notification is-success' : 'notification is-primary hidden' ">Ajouté au panier ! </div>
     <!--- Content --->
-    <div v-for='(article,index) in $store.state.allArticles' :key='index' class="columns ">
-    <div class="column is-half-tablet is-full">
-      <ArticleItem :articleInfo="article" class="column is-full"/>
+    <div v-for='(article,index) in $store.state.allArticles' :key='index' class="columns">
+    <div class="column">
+      <ArticleItem :articleInfo="article"/>
     </div>
     </div>
   </div>
@@ -24,13 +24,14 @@ export default {
         }
     },
     components: {
-        ArticleItem
+        ArticleItem,
     },
 
 }
 </script>
 
 <style scoped>
+
 .home{
       display: flex;
       flex-wrap: wrap;
