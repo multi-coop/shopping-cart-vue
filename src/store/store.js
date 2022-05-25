@@ -269,7 +269,7 @@ const getters = {
     totalPrice : state => {
         let total = state.cart.map(elem => elem.price)
         total = total.reduce((partialSum, a) => partialSum + a, 0)
-        total = total 
+        total = Math.round((total + Number.EPSILON) * 100) / 100 
         return total
     }
 }
