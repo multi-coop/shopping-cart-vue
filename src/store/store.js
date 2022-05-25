@@ -259,7 +259,8 @@ const actions = {
     decrementCount : ({ commit }) => commit('decrementCount'),
     addArticleToCart : ({ commit }, articleId) => commit('addArticleToCart', articleId),
     displayNotification : ({ commit }) => commit('displayNotification'),
-    emptyTheCart : ({ commit }) => commit('emptyTheCart')
+    emptyTheCart : ({ commit }) => commit('emptyTheCart'),
+    deleteArticle : ({ commit }) => commit('deleteArticle', articleId)
 }
 
 //Correct syntax : cf Gitribute
@@ -288,6 +289,11 @@ const mutations = {
     emptyTheCart(state){
         state.cart = []
         state.addedArticlesCount = 0
+    },
+    deleteArticle(state,articleId){
+        articleId = parseInt(articleId)
+        const article = state.allArticles.find(elem => elem.id === articleId)
+        state.allArticles = state.allArticles.filter(elem => elem !== article)
     }
 }
 
