@@ -265,7 +265,13 @@ const actions = {
 
 //Correct syntax : cf Gitribute
 const getters = {
-    singularOrPlurial : state => state.addedArticlesCount <= 1 ? 'article' : 'articles'
+    singularOrPlurial : state => state.addedArticlesCount <= 1 ? 'article' : 'articles',
+    totalPrice : state => {
+        let total = state.cart.map(elem => elem.price)
+        total = total.reduce((partialSum, a) => partialSum + a, 0)
+        total = total 
+        return total
+    }
 }
 
 const mutations = {
