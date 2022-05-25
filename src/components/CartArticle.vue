@@ -1,6 +1,6 @@
 <template>
-    <div class="wrapper p-3 my-2 mx-auto">
-        <h1>{{ articleInfo.title }} <span class="black">- {{ articleInfo.price }}€</span> </h1>
+    <div class="wrapper p-3 my-2-tablet my-4 mx-auto">
+        <h1 class="is-size-4-tablet is-size-5">{{ articleInfo.title }} <span class="black">- {{ articleInfo.price }}€</span> </h1>
         <button 
                class="button is-danger"
                @click="deleteArticle(articleInfo.id)"
@@ -37,7 +37,6 @@ export default{
     display: flex;
     justify-content: space-between;
     height: fit-content !important;
-    max-height: 12vh;
 }
 .black{
     color: black;
@@ -45,5 +44,12 @@ export default{
 
 button{
     color: white;
+}
+/* MEDIA QUERIES */
+@media(max-width:470px){
+    button{
+        margin-top: 1rem;
+        margin-left: 4%;
+    }
 }
 </style>

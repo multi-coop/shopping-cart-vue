@@ -25,7 +25,9 @@
             </router-link>
         </div>
 
-        <h2>TOTAL : {{total}}€ </h2>
+        <h2 
+           class="is-size-2-tablet is-size-3-mobile has-text-right has-text-weight-bold mr-6"
+           v-if="total>0">TOTAL : {{total}}€ </h2>
         <ul 
            v-for="(article,index) in $store.state.cart" 
            :key="index">
