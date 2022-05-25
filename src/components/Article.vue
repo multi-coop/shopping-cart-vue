@@ -44,7 +44,6 @@
 
 <script>
 import { mapActions } from 'vuex'
-import 'bulma'
 export default{
     name: 'ArticleItem',
     props : {
