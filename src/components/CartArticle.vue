@@ -1,11 +1,15 @@
 <template>
     <div class="wrapper p-3 my-2 mx-auto">
         <h1>{{ articleInfo.title }} <span class="black">- {{ articleInfo.price }}€</span> </h1>
-        <button class="button is-danger"> Remove </button>
+        <button 
+               class="button is-danger"
+               @click="deleteArticle(articleInfo.id)"
+        > Remove </button>
     </div>
 </template>
 
 <script>
+import {mapActions} from 'vuex'
 export default{
     name:'CartArticle',
     props : {
@@ -17,6 +21,11 @@ export default{
 
     data(){
         return{}
+    },
+    methods : {
+        ...mapActions([
+            'deleteArticle'
+        ])
     }
 }
 </script>
