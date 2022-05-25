@@ -292,8 +292,8 @@ const mutations = {
     },
     deleteArticle(state,articleId){
         articleId = parseInt(articleId)
-        const article = state.allArticles.find(elem => elem.id === articleId)
-        state.allArticles = state.allArticles.filter(elem => elem !== article)
+        const article = state.cart.find(elem => elem.id === articleId)
+        state.cart = state.cart.filter(elem => elem !== article)
     }
 }
 
