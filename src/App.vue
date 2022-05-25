@@ -16,9 +16,7 @@
                     to="/"
                     >
                     <span class="icon icon-apparel"></span> 
-                    <div class="is-hidden-mobile">Collections</div>
-                      
-                    
+                    <div class="is-hidden-mobile">Collections</div>           
         </router-link> 
         </li>
         <li 

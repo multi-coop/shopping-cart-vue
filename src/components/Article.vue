@@ -82,7 +82,7 @@ export default{
     min-width: 30vw;
     box-sizing: border-box;
     padding: 2%;
-    height:58vh;
+    height:58.5vh;
     overflow-y: scroll;
     border: 1px solid #D0C9C0;
 }

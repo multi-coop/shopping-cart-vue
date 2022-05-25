@@ -1,9 +1,10 @@
 <template>
   <div class="home">
-
     <!-- Notifications -->
         <div 
-        :class=" $store.state.isDisplayed ? 'notification is-success' : 'notification is-primary hidden' ">Ajouté au panier ! </div>
+        :class=" $store.state.isDisplayed ? 'notification is-success' : 'notification is-success hidden' ">
+        <div class="center">Ajouté!</div>
+        </div>
     <!--- Content --->
     <div v-for='(article,index) in $store.state.allArticles' :key='index' class="columns">
     <div class="column">
@@ -45,11 +46,19 @@ export default {
 .notification{
   position:fixed;
   z-index: 100;
-  top: 5%;
-  left: 42%;
-  font-weight: bold;
-  text-align: center;
+  width: 25vw;
+  top: 1%;
+  left: 38vw;
 }
+.center{
+  position: fixed;
+    left: 50%;
+    top: 1.9%;
+    transform: translate(-50%, 0);
+    font-weight: bold;
+    font-size: larger;
+}
+
 .hidden{
   display: none;
 }

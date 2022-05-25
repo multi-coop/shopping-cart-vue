@@ -12,11 +12,12 @@
         </h2>
 
         <button 
+                class="button is-medium is-warning"
                 @click="decrementCount(), emptyTheCart() "
                 v-if="$store.state.addedArticlesCount > 0">Empty the cart</button>
         <router-link
                    to="/">
-            <button>Go shopping</button>
+            <button class="button is-medium">Go shopping</button>
         </router-link>
 
         <ul 
@@ -58,4 +59,11 @@ export default{
 </script>
 
 <style scoped>
+
+button{
+    background-color: #6D8B74;
+    font-weight: bold;
+    margin: 1%;
+    color: white;
+}
 </style>
