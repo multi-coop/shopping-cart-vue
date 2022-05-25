@@ -260,7 +260,7 @@ const actions = {
     addArticleToCart : ({ commit }, articleId) => commit('addArticleToCart', articleId),
     displayNotification : ({ commit }) => commit('displayNotification'),
     emptyTheCart : ({ commit }) => commit('emptyTheCart'),
-    deleteArticle : ({ commit }) => commit('deleteArticle', articleId)
+    deleteArticle : ({ commit }, articleId) => commit('deleteArticle', articleId)
 }
 
 //Correct syntax : cf Gitribute
