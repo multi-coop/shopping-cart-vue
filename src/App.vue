@@ -27,7 +27,7 @@
                    to="/cart">
                    <span class="icon icon-cart"></span>
                    <div class="mobile is-hidden-tablet">{{ $store.state.addedArticlesCount }}</div>
-                   <div class="is-hidden-mobile">{{ $store.state.addedArticlesCount }} article(s)</div>
+                   <div class="is-hidden-mobile">{{ $store.state.addedArticlesCount }} {{singOrPlur}}</div>
         </router-link>
         </li>
       </ul>
@@ -39,6 +39,7 @@
 
 <script>
 import 'bulma'
+import { mapGetters } from 'vuex'
 export default{
     name: 'App',
     data(){
@@ -56,7 +57,12 @@ export default{
             this.tab2 = true
             this.tab1 = false
         },
-    }
+    },
+    computed: {
+        ...mapGetters({
+            singOrPlur: 'singularOrPlurial',
+        })
+    },
 }
 </script>
 
