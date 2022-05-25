@@ -294,6 +294,7 @@ const mutations = {
         articleId = parseInt(articleId)
         const article = state.cart.find(elem => elem.id === articleId)
         state.cart = state.cart.filter(elem => elem !== article)
+        state.addedArticlesCount--
     }
 }
 
