@@ -25,7 +25,7 @@
             </router-link>
         </div>
 
-        <h2>TOTAL : {{total}} </h2>
+        <h2>TOTAL : {{total}}€ </h2>
         <ul 
            v-for="(article,index) in $store.state.cart" 
            :key="index">
