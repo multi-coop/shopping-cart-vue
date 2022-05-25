@@ -1,26 +1,29 @@
 <template>
     <div class="wrapper">
-        <h1>Your cart</h1>
+        <div class="cart-infos-wrapper my-6">
 
-        <h2 
-           class="cart-infos"
-           v-if="$store.state.addedArticlesCount > 0">
-           You have {{$store.state.addedArticlesCount}} {{sg}}.
-        </h2>
-        <h2 
-           class="cart-infos"
-           v-if="$store.state.addedArticlesCount === 0">
-           You don't have any articles yet.
-        </h2>
-
-        <button 
-                class="button is-medium is-warning"
-                @click="decrementCount(), emptyTheCart() "
-                v-if="$store.state.addedArticlesCount > 0">Empty the cart</button>
-        <router-link
-                   to="/">
-            <button class="button is-medium">Go shopping</button>
-        </router-link>
+            <h1 class="is-size-2">Your cart</h1>
+    
+            <h2 
+               class="cart-infos is-size-4 my-4"
+               v-if="$store.state.addedArticlesCount > 0">
+               You have {{$store.state.addedArticlesCount}} {{sg}}.
+            </h2>
+            <h2 
+               class="cart-infos is-size-4 my-4"
+               v-if="$store.state.addedArticlesCount === 0">
+               You don't have any articles yet.
+            </h2>
+    
+            <button 
+                    class="button is-medium is-warning m-5"
+                    @click="decrementCount(), emptyTheCart() "
+                    v-if="$store.state.addedArticlesCount > 0">Empty the cart</button>
+            <router-link
+                       to="/">
+                <button class="button is-medium m-5">Go shopping</button>
+            </router-link>
+        </div>
 
         <ul 
            v-for="(article,index) in $store.state.cart" 
@@ -68,14 +71,9 @@ export default{
     height: 84vh;
 }
 
-.cart-infos{
-    font-size: 1.5rem;
-}
-
 button{
     background-color: #6D8B74;
     font-weight: bold;
-    margin: 1%;
     color: white;
 }
 </style>
