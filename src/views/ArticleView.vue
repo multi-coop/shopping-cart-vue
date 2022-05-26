@@ -18,13 +18,17 @@
         </div>
 
         <div class="buttons is-justify-content-center m-6">
-            <button class="button btn-buy is-large bold">Add to cart</button>
+            <button class="button btn-buy is-large bold"
+                    @click="addArticleToCart(selectedArticle.id), incrementCount(), displayNotification()">
+                    Add to cart
+            </button>
             <router-link to="/"><button class="button is-large bold">Go back to collection</button></router-link>
         </div>
     </div>
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 export default{
     name: 'ArticleView',
     props : {
@@ -42,6 +46,13 @@ export default{
     mounted(){
         this.selectedArticle = this.$store.state.allArticles.find(article => article.id === parseInt(this.$route.params.id))
         // console.log(this.selectedArticle)
+    },
+    methods : {
+        ...mapActions([
+            'incrementCount',
+            'addArticleToCart',
+            'displayNotification'
+        ])
     }
 
 }
