@@ -70,11 +70,6 @@ export default{
 
 <style scoped>
 
-.wrapper{
-    background-color: #f7f6f2;
-    height: 84vh;
-}
-
 button{
     background-color: #6D8B74;
     font-weight: bold;

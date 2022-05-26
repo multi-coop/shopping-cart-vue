@@ -76,6 +76,10 @@ export default{
   color: #2c3e50;
    background-color: #f7f6f2;
 }
+html{
+  background-color: #f7f6f2;
+
+}
 
 h1{
   font-weight: bold !important;
