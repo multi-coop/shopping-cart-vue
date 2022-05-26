@@ -1,6 +1,10 @@
 <template>
-
     <div class="wrapper m-auto">
+         <!-- Notifications -->
+        <div 
+        :class=" $store.state.isDisplayed ? 'notification is-success' : 'notification is-success hidden' ">
+        <div class="center">Ajouté!</div>
+        </div>
         <div class="img-texts is-flex is-align-items-center is-justify-content-space-evenly ">
             <img
                 class="mr-6" 
@@ -76,6 +80,20 @@ img{
 
 .bold{
     font-weight: bold;
+}
+.notification{
+  position:fixed;
+  z-index: 100;
+  width: fit-content;
+  top: 1%;
+  left: 38vw;
+  font-weight: bold;
+  text-align: center;
+  
+}
+
+.hidden{
+  display: none;
 }
 
 </style>
