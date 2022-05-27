@@ -1,49 +1,67 @@
 <template>
-    <div>
-        <h1>Your cart</h1>
+    <div class="wrapper">
+        <div class="cart-infos-wrapper my-6">
+
+            <h1 class="is-size-2">Your cart</h1>
+    
+            <h2 
+               class="cart-infos is-size-4 my-4"
+               v-if="$store.state.addedArticlesCount > 0">
+               You have {{$store.state.addedArticlesCount}} {{sg}}.
+            </h2>
+            <h2 
+               class="cart-infos is-size-4 my-4"
+               v-if="$store.state.addedArticlesCount === 0">
+               You don't have any articles yet.
+            </h2>
+    
+            <button 
+                    class="button is-medium is-warning m-5"
+                    @click="decrementCount(), emptyTheCart() "
+                    v-if="$store.state.addedArticlesCount > 0">Empty the cart</button>
+            <router-link
+                       to="/">
+                <button class="button is-medium m-5">Go shopping</button>
+            </router-link>
+        </div>
+
         <h2 
-           v-if="$store.state.addedArticlesCount > 0">
-           You have {{$store.state.addedArticlesCount}} {{sg}}.
-        </h2>
-        <h2 
-           v-if="$store.state.addedArticles === 0">
-           You don't have any articles yet.
-        </h2>
-
-        <router-link
-                   to="/">
-            <button>Go shopping</button>
-        </router-link>
-
-        <button @click="decrementCount">Empty the cart</button>
-
-
+           class="is-size-2-tablet is-size-3-mobile has-text-right has-text-weight-bold mr-6"
+           v-if="total>0">TOTAL : {{total}}€ </h2>
+        <ul 
+           v-for="(article,index) in $store.state.cart" 
+           :key="index">
+            <li> 
+                <CartArticle :articleInfo="article"/>
+            </li>
+        </ul> 
     </div>
 </template>
 
 <script>
-import { mapActions, mapGetters } from 'vuex'
+
+import { mapGetters } from 'vuex'
+import CartArticle from '@/components/CartArticle.vue'
+import { mixinArticles } from '@/mixins/mixins'
+
 export default{
     name: 'CartView',
-    data(){
-        return{
-
-        }
-    },
-    methods : {
-        ...mapActions([
-            'incrementCount',
-            'decrementCount',
-            'addArticleToCart'
-        ])
-    },
-    computed : {
+    mixins : [mixinArticles],
+    computed: {
         ...mapGetters({
-            sg : 'singularOrPlurial'
+            sg: 'singularOrPlurial',
+            total : 'totalPrice'
         })
-    }
+    },
+    components: { CartArticle }
 }
 </script>
 
 <style scoped>
+
+button{
+    background-color: #6D8B74;
+    font-weight: bold;
+    color: white;
+}
 </style>
