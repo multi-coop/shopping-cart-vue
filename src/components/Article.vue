@@ -38,13 +38,11 @@
      </router-link>
 
         </div>
-
     </div>
 </template>
 
 <script>
 import {mixinAddArticles} from '@/mixins/mixins'
-import { mapActions } from 'vuex'
 export default{
     name: 'ArticleItem',
     mixins : [mixinAddArticles],
@@ -54,17 +52,6 @@ export default{
             default : Object
         }
     },
-    methods : {
-        ...mapActions(['mountingAPI'])
-    },
-    async created(){
-        const API = 'https://fakestoreapi.com/products'
-        // const data = await fetch(API)
-        // const response = await data.json()
-        // console.log(response)   
-        this.mountingAPI(API) 
-    },
-
 }
 </script>
 
@@ -78,7 +65,6 @@ export default{
     overflow-y: scroll;
     border: 1px solid #D0C9C0;
 }
-
 
 .wrapper:hover{
     border-color: #6D8B74;;
