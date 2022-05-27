@@ -8,7 +8,6 @@
         <h1 class="is-size-2-tablet m-2">{{ selectedArticle.title }} </h1>
         <div class="img-texts is-flex is-flex-direction-row-tablet is-align-items-center-tablet is-justify-content-space-evenly-tablet ">
             <img
-                class="" 
                 :src="selectedArticle.image" 
                 :alt="selectedArticle.title" 
                 srcset="">
@@ -37,7 +36,7 @@
                   class="button is-medium btn-buy mobile"> 
                   <span class="icon-basket"></span> 
             </button>
-            <router-link to="/"><button class="button return is-large bold mt-4">←</button></router-link>
+            <router-link to="/"><button class="button return is-medium bold mt-4">←</button></router-link>
         </div>
     </div>
 </template>
