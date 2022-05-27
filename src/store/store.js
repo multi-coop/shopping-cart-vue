@@ -305,7 +305,6 @@ const mutations = {
         state.addedArticlesCount--
     },
     async mountingAPI(state, API){
-        console.log("starting")
         const data = await fetch(API)
         const response = await data.json()
         state.allArticles = response 
