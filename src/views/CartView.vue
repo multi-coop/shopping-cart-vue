@@ -34,30 +34,19 @@
             <li> 
                 <CartArticle :articleInfo="article"/>
             </li>
-        </ul>
-
-        
+        </ul> 
     </div>
 </template>
 
 <script>
 
-import { mapActions, mapGetters } from 'vuex'
+import { mapGetters } from 'vuex'
 import CartArticle from '@/components/CartArticle.vue'
+import { mixinArticles } from '@/mixins/mixins'
 
 export default{
     name: 'CartView',
-    data() {
-        return {}
-    },
-    methods: {
-        ...mapActions([
-            'incrementCount',
-            'decrementCount',
-            'addArticleToCart',
-            'emptyTheCart'
-        ])
-    },
+    mixins : [mixinArticles],
     computed: {
         ...mapGetters({
             sg: 'singularOrPlurial',

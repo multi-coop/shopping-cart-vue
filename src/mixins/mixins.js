@@ -1,11 +1,12 @@
 import { mapActions } from 'vuex'
-export const mixinAddArticles = {
+export const mixinArticles = {
     methods :{
         ...mapActions([
             'incrementCount',
             'decrementCount',
             'addArticleToCart',
-            'displayNotification'
+            'displayNotification',
+            'emptyTheCart'
         ])
     }
 }
