@@ -16,18 +16,20 @@
 
 <script>
 import ArticleItem from '@/components/Article.vue'
+import { mapActions } from 'vuex'
 
 export default {
     name: 'HomeView',
-    data(){
-        return{
-            
-        }
-    },
     components: {
         ArticleItem,
     },
-
+    async mounted(){
+        const API = 'https://fakestoreapi.com/products' 
+        this.mountingAPI(API) 
+    },
+    methods : {
+        ...mapActions(['mountingAPI'])
+    }
 
 }
 </script>
