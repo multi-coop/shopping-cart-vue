@@ -3,25 +3,28 @@
         <div class="cart-infos-wrapper my-6">
 
             <h1 class="is-size-2">Your cart</h1>
-    
-            <h2 
-               class="cart-infos is-size-4 my-4"
-               v-if="$store.state.addedArticlesCount > 0">
-               You have {{$store.state.addedArticlesCount}} {{sg}}.
-            </h2>
-            <h2 
-               class="cart-infos is-size-4 my-4"
-               v-if="$store.state.addedArticlesCount === 0">
-               You don't have any articles yet.
-            </h2>
+
+            <div
+                class="cart-infos is-size-4 my-4">
+                <h2 
+                    v-if="$store.state.addedArticlesCount > 0">
+                    You have {{$store.state.addedArticlesCount}} {{sg}}.
+                </h2>
+                <h2
+                    v-if="$store.state.addedArticlesCount === 0">
+                    You don't have any articles yet.
+                </h2>
+            </div>
     
             <button 
-                    class="button is-medium is-warning m-5"
+                    class="button is-medium is-warning m-5 is-bold has-text-weight-bold"
                     @click="decrementCount(), emptyTheCart() "
-                    v-if="$store.state.addedArticlesCount > 0">Empty the cart</button>
-            <router-link
-                       to="/">
-                <button class="button is-medium m-5">Go shopping</button>
+                    v-if="$store.state.addedArticlesCount > 0">
+                    Empty the cart
+            </button>
+
+            <router-link to="/">   
+                <button class="button is-medium m-5 has-text-white has-text-weight-bold">Go shopping</button>
             </router-link>
         </div>
 
@@ -39,7 +42,6 @@
 </template>
 
 <script>
-
 import { mapGetters } from 'vuex'
 import CartArticle from '@/components/CartArticle.vue'
 import { mixinArticles } from '@/mixins/mixins'
@@ -58,10 +60,7 @@ export default{
 </script>
 
 <style scoped>
-
 button{
     background-color: #6D8B74;
-    font-weight: bold;
-    color: white;
 }
 </style>

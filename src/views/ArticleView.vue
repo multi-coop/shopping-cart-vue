@@ -2,7 +2,7 @@
     <div class="wrapper m-auto">
          <!-- Notifications -->
         <div 
-        :class=" $store.state.isDisplayed ? 'notification is-success' : 'notification is-success hidden' ">
+        :class=" $store.state.isDisplayed ? 'notification has-text-weight-bold is-success' : 'notification is-success hidden' ">
         <div class="center">Ajouté!</div>
         </div>
         <h1 class="is-size-2-tablet m-2">{{ selectedArticle.title }} </h1>
@@ -12,7 +12,7 @@
                 :alt="selectedArticle.title" 
                 srcset="">
 
-           <div class="texts  ">
+           <div class="texts">
                <h2 class="category is-size-4 is-size-3-tablet m-5">Category : {{ selectedArticle.category }} </h2>
                <h2 class=" price is-size-2 m-5 bold"> {{ selectedArticle.price }}€ </h2>
                <h2 class="description-title is-size-4 m-5 bold">Description : </h2>
@@ -58,7 +58,6 @@ export default{
             selectedArticle : {},
         }
     },
-
     mounted(){
         this.selectedArticle = this.$store.state.allArticles.find(article => article.id === parseInt(this.$route.params.id))
     },
@@ -101,7 +100,6 @@ img{
   width: fit-content;
   top: 1%;
   left: 38vw;
-  font-weight: bold;
   text-align: center;
 }
 
