@@ -42,10 +42,10 @@
 </template>
 
 <script>
-import {mixinAddArticles} from '@/mixins/mixins'
+import {mixinArticles} from '@/mixins/mixins'
 export default{
     name: 'ArticleItem',
-    mixins : [mixinAddArticles],
+    mixins : [mixinArticles],
     props : {
         articleInfo : {
             type : Object,
