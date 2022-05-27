@@ -1,8 +1,8 @@
 <template>
-    <div class="wrapper p-3 my-2-tablet my-4 mx-auto">
-        <h1 class="is-size-4-tablet is-size-5">{{ articleInfo.title }} <span class="black">- {{ articleInfo.price }}€</span> </h1>
+    <div class="wrapper p-3 my-2-tablet my-4 mx-auto is-flex is-justify-content-space-between">
+        <h1 class="is-size-4-tablet is-size-5 has-text-weight-bold">{{ articleInfo.title }} <span class="has-text-black">- {{ articleInfo.price }}€</span> </h1>
         <button 
-               class="button is-danger"
+               class="button is-danger has-text-weight-bold"
                @click="deleteArticle(articleInfo.id)"
         > Remove </button>
     </div>
@@ -34,17 +34,9 @@ export default{
 .wrapper{
     border: 1px solid #D0C9C0;
     width: 98%;
-    display: flex;
-    justify-content: space-between;
     height: fit-content !important;
 }
-.black{
-    color: black;
-}
 
-button{
-    color: white;
-}
 /* MEDIA QUERIES */
 @media(max-width:470px){
     button{

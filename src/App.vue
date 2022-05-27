@@ -1,9 +1,9 @@
 <template>
   <div id="app">
     
-    <div class="tabs is-medium is-right">
+    <div class="tabs p-4 is-medium is-right">
       <!-- Title -->
-      <h1 class="is-hidden-mobile p-2">Green Shopping</h1>
+      <h1 class="is-hidden-mobile p-2 is-size-3 has-text-weight-bold">Green Shopping</h1>
       <!-- Logo -->
       <span class="icon icon-leaf is-large p-4"></span>
       <!-- Navbar -->
@@ -74,33 +74,18 @@ export default{
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-   background-color: #f7f6f2;
 }
 html{
   background-color: #f7f6f2;
-
 }
 
 h1{
-  font-weight: bold !important;
-  font-size: 1.5rem !important;
   color: #5c7061;
 }
 
 .tabs{
   background-color:#d8d4cc;
-  padding: 2%;
 }
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
-}
-
 /*------- ICONMOON CSS ----- */
 @font-face {
   font-family: 'icomoon';

@@ -5,7 +5,7 @@
         :class=" $store.state.isDisplayed ? 'notification has-text-weight-bold is-success' : 'notification is-success hidden' ">
         <div class="center">Ajouté!</div>
         </div>
-        <h1 class="is-size-2-tablet m-2">{{ selectedArticle.title }} </h1>
+        <h1 class="is-size-2-tablet m-2 has-text-weight-bold">{{ selectedArticle.title }} </h1>
         <div class="img-texts is-flex is-flex-direction-row-tablet is-align-items-center-tablet is-justify-content-space-evenly-tablet ">
             <img
                 :src="selectedArticle.image" 

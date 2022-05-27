@@ -1,23 +1,23 @@
 <template>
-    <div class="wrapper">
+    <div class="wrapper p-3">
         <router-link :to="`/article/${articleInfo.id}`">
-            <h2 class="title"> {{ articleInfo.title }} </h2>
+            <h2 class="title is-size-4-tablet is-size-5 m-4"> {{ articleInfo.title }} </h2>
         </router-link>
         
         <router-link :to="`/article/${articleInfo.id}`">
            <img :src="articleInfo.image" alt="" srcset="">
         </router-link>
-        <h2> {{ articleInfo.price }}€ </h2>
+        <h2 class="has-text-weight-bold is-size-4 m-4"> {{ articleInfo.price }}€ </h2>
 
         <button 
               @click="addArticleToCart(articleInfo.id), incrementCount(), displayNotification()" 
               :class="articleInfo.id"
-              class="button is-medium btn-buy is-hidden-mobile">
+              class="button m-2 has-text-weight-bold is-medium btn-buy is-hidden-mobile has-text-white">
               Add to cart
         </button>
 
         <router-link :to="`/article/${articleInfo.id}`">
-           <button class="button is-outlined is-medium is-hidden-mobile">
+           <button class="button m-2 has-text-weight-bold is-outlined is-medium is-hidden-mobile">
                See details
             </button>
         </router-link>
@@ -26,17 +26,15 @@
             <button
                   @click="addArticleToCart(articleInfo.id), incrementCount(), displayNotification()" 
                   :class="articleInfo.id"
-                  class="button is-medium btn-buy mobile is-hidden-tablet"> 
+                  class="button m-2 is-medium has-text-weight-bold btn-buy mobile is-hidden-tablet  has-text-white"> 
                   <span class="icon-basket"></span> 
             </button>
-
-
-     <router-link :to="`/article/${articleInfo.id}`">
-        <button class="button is-outlined is-medium mobile is-hidden-tablet">
-            <span class="icon-view-show"></span> 
-         </button>
-     </router-link>
-
+            <!-- Check indentation with Julien -->
+            <router-link :to="`/article/${articleInfo.id}`">
+                <button class="button m-2 has-text-weight-bold is-outlined is-medium mobile is-hidden-tablet">
+                    <span class="icon-view-show"></span> 
+                </button>
+            </router-link>
         </div>
     </div>
 </template>
@@ -60,7 +58,6 @@ export default{
     width: 30vw;
     min-width: 30vw;
     box-sizing: border-box;
-    padding: 2%;
     height:58.5vh;
     overflow-y: scroll;
     border: 1px solid #D0C9C0;
@@ -69,34 +66,20 @@ export default{
 .wrapper:hover{
     border-color: #6D8B74;;
 }
-.title{
-    font-size: 1.2rem;
-}
 
 .title:hover{
     color: #6D8B74;
 }
 
-h2{
-    font-size: 1.4rem;
-    font-weight:bold;
-    margin: 4%;
-}
-
 img{
-    max-width: 9vw;
     width:9vw;
-    max-height: 22vh;
+    max-width: 9vw;
     height: 22vh;
+    max-height: 22vh;
 }
 
-button{
-    font-weight: bold;
-    margin: 2%;
-}
 .btn-buy{
     background-color: #6D8B74;
-    color: white; 
 }
 /*-- MEDIA QUERIES ---------- */
 @media(max-width: 1024px){
@@ -116,7 +99,6 @@ button{
     }
 
     img{
-        width: fit-content;
         max-width: 55vw;
     }
 }
@@ -135,5 +117,4 @@ button{
 .icon-view-show:before {
   content: "\e902";
 }
-/*------- END OF ICONMOON CSS ----- */
 </style>

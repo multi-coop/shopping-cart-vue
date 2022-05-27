@@ -2,14 +2,17 @@
   <div class="home">
     <!-- Notifications -->
         <div 
-        :class=" $store.state.isDisplayed ? 'notification is-success' : 'notification is-success hidden' ">
-        <div class="center">Ajouté!</div>
+            :class=" $store.state.isDisplayed ? 'notification is-success' : 'notification is-success hidden' ">
+            <div class="center">Ajouté!</div>
         </div>
     <!--- Content --->
-    <div v-for='(article,index) in $store.state.allArticles' :key='index' class="columns">
-    <div class="column">
-      <ArticleItem :articleInfo="article"/>
-    </div>
+    <!-- Check indentation with Julien -->
+    <div 
+        v-for='(article,index) in $store.state.allArticles' 
+        :key='index' class="columns">
+            <div class="column"> 
+              <ArticleItem :articleInfo="article"/>
+            </div>
     </div>
   </div>
 </template>
@@ -30,18 +33,17 @@ export default {
     methods : {
         ...mapActions(['mountingAPI'])
     }
-
 }
 </script>
 
 <style scoped>
 
 .home{
-      display: flex;
-      flex-wrap: wrap;
-      background-color: #f7f6f2;
-      width: 97vw;
-      margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #f7f6f2;
+  width: 97vw;
+  margin: auto;
 }
 .columns{
   margin: auto;
@@ -55,11 +57,11 @@ export default {
 }
 .center{
   position: fixed;
-    left: 50%;
-    top: 1.9%;
-    transform: translate(-50%, 0);
-    font-weight: bold;
-    font-size: larger;
+  left: 50%;
+  top: 1.9%;
+  transform: translate(-50%, 0);
+  font-weight: bold;
+  font-size: larger;
 }
 
 .hidden{

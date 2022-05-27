@@ -2,7 +2,7 @@
     <div class="wrapper">
         <div class="cart-infos-wrapper my-6">
 
-            <h1 class="is-size-2">Your cart</h1>
+            <h1 class="is-size-2 has-text-weight-bold">Your cart</h1>
 
             <div
                 class="cart-infos is-size-4 my-4">
