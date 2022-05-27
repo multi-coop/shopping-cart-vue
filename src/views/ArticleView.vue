@@ -61,9 +61,7 @@ export default{
 
     mounted(){
         this.selectedArticle = this.$store.state.allArticles.find(article => article.id === parseInt(this.$route.params.id))
-        // console.log(this.selectedArticle)
     },
-
 }
 </script>
 

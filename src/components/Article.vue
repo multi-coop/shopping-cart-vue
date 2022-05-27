@@ -43,35 +43,27 @@
 </template>
 
 <script>
+import {mixinAddArticles} from '@/mixins/mixins'
 import { mapActions } from 'vuex'
 export default{
     name: 'ArticleItem',
+    mixins : [mixinAddArticles],
     props : {
         articleInfo : {
             type : Object,
             default : Object
         }
     },
-
-    data(){
-        return{
-
-        }
+    async mounted(){
+        const API = 'https://fakestoreapi.com/products'
+        // const data = await fetch(API)
+        // const response = await data.json()
+        // console.log(response)   
+        mountingAPI(API) 
     },
-    methods :{
-        ...mapActions([
-            'incrementCount',
-            'decrementCount',
-            'addArticleToCart',
-            'displayNotification'
-        ]),
+    methods : {
+        ...mapActions(['mountingAPI'])
     }
-
-    // async mounted(){
-    //     const data = await fetch('https://fakestoreapi.com/products')
-    //     const response = await data.json()
-    //     console.log(response)    
-    // }
 }
 </script>
 
