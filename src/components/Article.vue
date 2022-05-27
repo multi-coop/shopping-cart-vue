@@ -102,19 +102,5 @@ img{
         max-width: 55vw;
     }
 }
-/*------- ICONMOON CSS ----- */
-.icon-basket:before {
-  content: "\e901";
-}
 
-.icon-ecommerce:before {
-  content: "\e901";
-}
-
-.icon-shopping-cart:before {
-  content: "\e900";
-}
-.icon-view-show:before {
-  content: "\e902";
-}
 </style>
