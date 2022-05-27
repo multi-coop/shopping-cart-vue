@@ -39,6 +39,7 @@
 
 <script>
 import 'bulma'
+// import 'buefy'
 import { mapGetters } from 'vuex'
 export default{
     name: 'App',
@@ -142,7 +143,5 @@ h1{
 .icon-view-show:before {
   content: "\e902";
 }
-
-/*------- END OF ICONMOON CSS ----- */
 
 </style>

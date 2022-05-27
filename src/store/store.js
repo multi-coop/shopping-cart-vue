@@ -19,7 +19,6 @@ const actions = {
     mountingAPI : ({ commit }, API) => commit('mountingAPI', API)
 }
 
-//Correct syntax : cf Gitribute
 const getters = {
     singularOrPlurial : state => state.addedArticlesCount <= 1 ? 'article' : 'articles',
     totalPrice : state => {
@@ -31,6 +30,11 @@ const getters = {
 }
 
 const mutations = {
+    async mountingAPI(state, API){
+        const data = await fetch(API)
+        const response = await data.json()
+        state.allArticles = response 
+    },
     incrementCount(state){
         state.addedArticlesCount++
     },
@@ -58,11 +62,6 @@ const mutations = {
         state.cart = state.cart.filter(elem => elem !== article)
         state.addedArticlesCount--
     },
-    async mountingAPI(state, API){
-        const data = await fetch(API)
-        const response = await data.json()
-        state.allArticles = response 
-    }
 }
 
 export default new Vuex.Store({

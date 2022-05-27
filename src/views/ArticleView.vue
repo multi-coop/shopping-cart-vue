@@ -21,6 +21,7 @@
         </div>
 
         <div class="buttons is-justify-content-center m-6 is-hidden-mobile">
+            <ImgModale :imgLink="selectedArticle.image" class="m-auto"/>
             <button class="button btn-buy is-large bold"
                     @click="addArticleToCart(selectedArticle.id), incrementCount(), displayNotification()">
                     Add to cart
@@ -36,17 +37,22 @@
                   class="button is-medium btn-buy mobile"> 
                   <span class="icon-basket"></span> 
             </button>
-            <router-link to="/"><button class="button return is-medium bold mt-4">←</button></router-link>
+            <router-link to="/">
+                <button class="button return is-medium bold mt-4">←</button>
+            </router-link>
         </div>
     </div>
 </template>
 
 <script>
 
+// import 'buefy'
 import {mixinArticles} from '@/mixins/mixins'
+import ImgModale from '@/components/ImgModale.vue'
 export default{
     name: 'ArticleView',
     mixins : [mixinArticles],
+    components : {ImgModale},
     props : {
         articleInfo : {
             type : Object,
