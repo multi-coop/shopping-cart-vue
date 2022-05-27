@@ -6,6 +6,7 @@ export const mixinArticles = {
             'decrementCount',
             'addArticleToCart',
             'displayNotification',
+            'deleteArticle',
             'emptyTheCart'
         ])
     }

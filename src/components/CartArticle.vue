@@ -9,24 +9,16 @@
 </template>
 
 <script>
-import {mapActions} from 'vuex'
+import { mixinArticles } from '@/mixins/mixins'
 export default{
     name:'CartArticle',
+    mixins : [mixinArticles],
     props : {
         articleInfo : {
             type : Object,
             default : Object
         }
     },
-
-    data(){
-        return{}
-    },
-    methods : {
-        ...mapActions([
-            'deleteArticle'
-        ])
-    }
 }
 </script>
 
