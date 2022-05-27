@@ -1,11 +1,18 @@
 <template>
     <section>
         <div class="buttons">
-            <b-button
-                label="Zoom"
-                type="is-black"
-                size="is-medium"
-                @click="isImageModalActive = true"/>
+            <button 
+                    class="button is-black is-medium has-text-weight-bold is-hidden-mobile"
+                    @click="isImageModalActive = true">
+                Zoom in 
+                <span class="icon-zoom-in icon is-large is-white ml-2"></span>
+            </button>
+            
+            <div>
+                <span class="icon-zoom-in is-hidden-tablet icon is-large"
+                        @click="isImageModalActive = true">
+                </span>
+            </div>
         </div>
 
         <b-modal v-model="isImageModalActive">
@@ -41,4 +48,9 @@ img{
     max-width: fit-content;
     margin: auto;
 }
+
+.icon{
+    font-size: 2rem;
+}
+
 </style>

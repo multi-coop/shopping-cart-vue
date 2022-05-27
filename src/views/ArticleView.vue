@@ -5,12 +5,13 @@
         :class=" $store.state.isDisplayed ? 'notification has-text-weight-bold is-success' : 'notification is-success hidden' ">
         <div class="center">Ajouté!</div>
         </div>
-        <h1 class="is-size-2-tablet m-2 has-text-weight-bold">{{ selectedArticle.title }} </h1>
+        <h1 class="is-size-2-tablet is-size-4 m-2 has-text-weight-bold">{{ selectedArticle.title }} </h1>
         <div class="img-texts is-flex is-flex-direction-row-tablet is-align-items-center-tablet is-justify-content-space-evenly-tablet ">
             <img
                 :src="selectedArticle.image" 
                 :alt="selectedArticle.title" 
                 srcset="">
+            <ImgModale :imgLink="selectedArticle.image" class="my-5 mx-auto is-hidden-tablet"/>
 
            <div class="texts">
                <h2 class="category is-size-4 is-size-3-tablet m-5">Category : {{ selectedArticle.category }} </h2>

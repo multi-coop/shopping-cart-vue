@@ -144,4 +144,8 @@ h1{
   content: "\e902";
 }
 
+.icon-zoom-in:before {
+  content: "\e987";
+}
+
 </style>
