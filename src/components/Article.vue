@@ -54,16 +54,17 @@ export default{
             default : Object
         }
     },
-    async mounted(){
+    methods : {
+        ...mapActions(['mountingAPI'])
+    },
+    async created(){
         const API = 'https://fakestoreapi.com/products'
         // const data = await fetch(API)
         // const response = await data.json()
         // console.log(response)   
-        mountingAPI(API) 
+        this.mountingAPI(API) 
     },
-    methods : {
-        ...mapActions(['mountingAPI'])
-    }
+
 }
 </script>
 
